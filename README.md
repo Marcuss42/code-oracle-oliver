@@ -293,6 +293,12 @@ Os valores de preço são utilizados pelo Code Oracle para acompanhar o custo da
 
 ## Execução
 
+### Baixar as dependências
+
+```powershelll
+pip install -r requirements.txt
+```
+
 O Code Oracle possui dois modos de execução.
 
 ### Terminal
