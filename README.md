@@ -220,6 +220,77 @@ Seu comportamento é semelhante ao de um analista de código experiente:
 
 O objetivo não é simplesmente gerar respostas, mas **investigar o código e apresentar conclusões sustentadas por evidências**.
 
+## Configuração
+
+O Code Oracle utiliza dois arquivos de configuração:
+
+```text
+.env
+ai/config/config.ini
+```
+
+### .env
+
+O arquivo `.env` é utilizado para armazenar a chave de acesso da API do provedor de modelo de linguagem.
+
+Atualmente, o Code Oracle utiliza o **OpenRouter** para acesso aos modelos.
+
+Crie um arquivo `.env` na raiz do projeto:
+
+```env
+OPENROUTER_API_KEY=sua_chave_aqui
+```
+
+### config.ini
+
+O arquivo `ai/config/config.ini` define qual provedor e qual modelo serão utilizados pelo Code Oracle, além das configurações necessárias para acesso à API e dos preços utilizados pelo sistema para cálculo dos custos das chamadas.
+
+O provedor utilizado é definido na seção `[modelo]`:
+
+```ini
+[modelo]
+provedor=openrouter
+```
+
+O Code Oracle utiliza esse valor para localizar automaticamente a seção correspondente ao provedor:
+
+```ini
+[openrouter]
+modelo=...
+base_url=...
+entrada=...
+entrada_cache=...
+saida=...
+```
+
+A configuração permite alterar o provedor ou modelo sem precisar modificar diretamente o código Python.
+
+O `config.py` também monta automaticamente o nome da variável de ambiente da API com base no provedor configurado.
+
+Por exemplo:
+
+```text
+provedor=openrouter
+        ↓
+OPENROUTER_API_KEY
+```
+
+Assim, o código procura automaticamente:
+
+```env
+OPENROUTER_API_KEY=...
+```
+
+A configuração também define:
+
+* Modelo utilizado
+* URL base da API
+* Preço de entrada
+* Preço de entrada em cache
+* Preço de saída
+
+Os valores de preço são utilizados pelo Code Oracle para acompanhar o custo das chamadas realizadas ao modelo.
+
 ## Execução
 
 O Code Oracle possui dois modos de execução.
