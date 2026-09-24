@@ -1,0 +1,7 @@
+.venv/
+.env
+/conhecimento/
+/relatorios/
+__pycache__/
+*.py[cod]
+/logs/

@@ -1,0 +1,12 @@
+{
+    "repositorios": [
+        {
+            "nome": "repo-a",
+            "path": "C:/Users/PATH/repo-a"
+        },
+        {
+            "nome": "repo-b",
+            "path": "C:/Users/PATH/repo-b"
+        }
+    ]
+}
