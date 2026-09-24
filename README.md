@@ -220,6 +220,28 @@ Seu comportamento é semelhante ao de um analista de código experiente:
 
 O objetivo não é simplesmente gerar respostas, mas **investigar o código e apresentar conclusões sustentadas por evidências**.
 
+## Execução
+
+O Code Oracle possui dois modos de execução.
+
+### Terminal
+
+Para executar o agente diretamente pelo terminal:
+
+```powershell
+python terminal.py
+```
+
+### Interface
+
+Para executar o agente através da interface:
+
+```powershell
+python interface.py
+```
+
+Os dois modos utilizam o mesmo agente e as mesmas funcionalidades de análise e consulta.
+
 ## Tecnologias
 
 * Python
